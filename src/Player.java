@@ -13,16 +13,16 @@ public class Player {
         hand = new Card[11];
     }
 
-    public void receiveCard(Card newCard){
+    public void addCard(Card newCard){
         hand[cardNum]= newCard;
         cardNum++;
     }
 
     public void printPlayer(){
+        System.out.println(name + " 's hand: ");
         for(int i = 0; i < cardNum; i++){
             hand[i].printCard();
         }
-        System.out.println(name + " 's hand: ");
     }
 
 }
