@@ -5,6 +5,7 @@ public class Player {
     public int numPlayer;
     public boolean isDealer = false;
     public Card[] hand;
+    public int cardSum;
 
     public Player(String pname,int pnumPlayer){
         name = pname;
@@ -18,11 +19,21 @@ public class Player {
         cardNum++;
     }
 
+    public void sumCard(){
+        System.out.println(name + " has a total of: " + cardSum);
+        for(int i = 0; i < cardNum; i++){
+            cardSum = hand[i].value;
+            hand[i].printCard();
+        }
+    }
+
     public void printPlayer(){
         System.out.println(name + " 's hand: ");
         for(int i = 0; i < cardNum; i++){
             hand[i].printCard();
         }
     }
+
+
 
 }

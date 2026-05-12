@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.JPanel;
@@ -6,12 +8,15 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.image.BufferStrategy;
+import java.util.Scanner;
 
 
 public class Main {
 
     Image backgroundImg;
     public Card[] deck;
+    Scanner sc = new Scanner(System.in);
+    //String input = sc.nextLine();
 
     public JFrame frame;
     public Canvas canvas;
@@ -21,10 +26,12 @@ public class Main {
     public static void main(String[] args) {
         Main blackjack = new Main();
         Player player = new Player("Bud",2);
+        player.sumCard();
         player.addCard(blackjack.deck[0]);
         player.addCard(blackjack.deck[1]);
         player.printPlayer();
         Player dealer = new Player("Dealer",2);
+        dealer.sumCard();
         dealer.addCard(blackjack.deck[2]);
         dealer.printPlayer();
     }
@@ -72,9 +79,6 @@ public class Main {
         }
         backgroundImg = new ImageIcon("background.jpg").getImage();
         shuffle();
-        printDeck();
-        setUpGraphics();
-        render();
     }
 
     public void printDeck(){
