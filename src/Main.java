@@ -26,14 +26,15 @@ public class Main {
     public static void main(String[] args) {
         Main blackjack = new Main();
         Player player = new Player("Bud",2);
-        player.sumCard();
+        System.out.println("Player's hand: ");
         player.addCard(blackjack.deck[0]);
         player.addCard(blackjack.deck[1]);
-        player.printPlayer();
+        player.sumCards();
+        System.out.println();
         Player dealer = new Player("Dealer",2);
-        dealer.sumCard();
+        System.out.println("Dealer's hand: ");
         dealer.addCard(blackjack.deck[2]);
-        dealer.printPlayer();
+        dealer.sumCard();
     }
 
     private void setUpGraphics() {
